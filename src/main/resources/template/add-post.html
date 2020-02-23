@@ -6,7 +6,7 @@
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/index.css">
+    <link rel="stylesheet" href="../static/scss/add-post.css">
 </head>
 
 <body>
@@ -45,13 +45,83 @@
 
         </header>
         <main class="main">
-            <!-- <section class="welcome">
-                <h3>welcome to <span>poc</span></h3>
-                <h5>Blogging has never been so sweet...</h5>
-            </section> -->
+            <div class="add_post">
+                <form action="" methos="get">
+                    <div class="title-post">
+                        <label class="label" for="post-title">Title</label>
+                        <Span class="add-post__title__errors"></Span>
+                        <input type="text" name="post-title" id="post-title">
+                    </div>
+                    <div class="author-post">
+                        <label class="label" for="post-author">Author</label>
+                        <Span class="add-post__author__errors"></Span>
+                        <input type="text" name="post-author" id="post-author">
+                    </div>
+                    <div class="body-post">
+                        <label class="label" for="post-body">body</label>
+                        <Span class="add-post__body__errors">ddd</Span>
+                        <textarea rows="10" cols="auto"></textarea>
+                    </div>
+                    <div class="categories-post">
+                        <div>
+                            <label class="label" for="post-categories">Categories</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div>
+                            <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
+                        </div>
+                    </div>
+                    <div class="tags-post">
+                        <div>
+                            <label class="label" for="post-tag">Tags</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="post-tags" id="post-tag"><label>Tag1</label>
+                        </div>
+
+
+                        <div>
+                            <input type="checkbox" name="post-tags" id="post-tags"><label>Tag2</label>
+                        </div>
+                    </div>
+                    <div class="button-post">
+                        <button type="submit">Save</button>
+
+                    </div>
+                </form>
+
+            </div>
         </main>
         <footer class="footer">
-            <p>copiright &copy 2020 daly tekam </p>
+            <p>copiright &copy 2020 </p>
             <p>All Rights reserved </p>
         </footer>
     </div>
