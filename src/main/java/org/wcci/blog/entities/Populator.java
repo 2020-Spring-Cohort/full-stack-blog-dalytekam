@@ -88,11 +88,14 @@ public class Populator implements CommandLineRunner {
         postRepository.findAll().forEach(post -> {
                    System.out.println(post.getPostTitle());
                    System.out.println(post.getPostBody());
-
-
             });
 
-
+postRepository.findAll().forEach(p->{
+    System.out.println(p.getPostTitle());
+    p.getPostTags().forEach(t->{
+        System.out.println(t.getTagName());
+    });
+});
                 }
 
 

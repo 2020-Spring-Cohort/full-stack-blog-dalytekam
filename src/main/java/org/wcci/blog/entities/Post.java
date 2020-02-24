@@ -1,4 +1,6 @@
 package org.wcci.blog.entities;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.wcci.blog.entities.Author;
 import org.wcci.blog.entities.Category;
 import org.wcci.blog.entities.Tag;
@@ -21,8 +23,10 @@ public class Post {
     @ManyToOne
     private Author postAuthor;
     @ManyToMany
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<Category> postCategories = new ArrayList<>();
     @ManyToMany
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<Tag> postTags =new ArrayList<>();
 
     public Post() {

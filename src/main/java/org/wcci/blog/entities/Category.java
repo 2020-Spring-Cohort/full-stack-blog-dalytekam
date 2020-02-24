@@ -1,5 +1,8 @@
 package org.wcci.blog.entities;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -11,6 +14,7 @@ public class Category {
     @NotNull
     private String categoryName;
     @ManyToMany(mappedBy = "postCategories")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<Post> categoryPosts =new ArrayList<>();
 
     public Category() {

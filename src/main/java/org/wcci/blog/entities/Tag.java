@@ -1,5 +1,8 @@
 package org.wcci.blog.entities;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -15,6 +18,7 @@ public class Tag {
     @NotNull
     private String tagName;
     @ManyToMany(mappedBy = "postTags")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<Post> tagPosts =new ArrayList<>();
 
     public Tag() {
