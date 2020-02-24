@@ -1,7 +1,7 @@
 package org.wcci.blog.entities;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.stereotype.Component;
 import org.wcci.blog.dao.AuthorRepository;
 import org.wcci.blog.dao.CategoryRepository;

@@ -26,10 +26,12 @@ public class Author {
     }
 
     public Long getAuthorId() {
+
         return authorId;
     }
 
     public String getAuthorName() {
+
         return authorName;
     }
 
