@@ -59,9 +59,9 @@ public class Populator implements CommandLineRunner {
         authorRepository.save(kuate);
 
         // Create post
-        Post post1 =new Post("My first Post","is simply dummy text of the printing and ",daly);
-        Post post2 =new Post("My first Post","is simply dummy ext of the printing a",richy);
-        Post post3 =new Post("My first Post","is simply dummy text of the printing and t",tekam);
+        Post post1 = new Post("My first Post", "is simply dummy text of the printing and ", daly);
+        Post post2 = new Post("My first Post", "is simply dummy ext of the printing a", richy);
+        Post post3 = new Post("My first Post", "is simply dummy text of the printing and t", tekam);
 
         //Add categories to post
         post1.getPostCategories().add(food);
@@ -86,20 +86,20 @@ public class Populator implements CommandLineRunner {
 
 
         postRepository.findAll().forEach(post -> {
-                   System.out.println(post.getPostTitle());
-                   System.out.println(post.getPostBody());
+            System.out.println(post.getPostId());
+            System.out.println(post.getPostTitle());
+            System.out.println(post.getPostAuthor().getAuthorName());
+            post.getPostCategories().forEach(c->{
+                System.out.println(c.getCategoryName());
+            });
+            post.getPostTags().forEach(t->{
+                System.out.println(t.getTagName());
             });
 
-postRepository.findAll().forEach(p->{
-    System.out.println(p.getPostTitle());
-    p.getPostTags().forEach(t->{
-        System.out.println(t.getTagName());
-    });
-});
-                }
+        });
 
 
-
+    }
 
 
 }
