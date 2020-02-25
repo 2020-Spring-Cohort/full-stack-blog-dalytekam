@@ -303,19 +303,19 @@ hr {
   display: -ms-grid;
   display: grid;
   grid-gap: 0.5rem;
-  border: 0.1rem solid #000;
+  border: 0.1rem solid #004777;
   margin-top: 0.5rem;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
 .all-posts__body__single-post:hover {
-  -webkit-box-shadow: 0px 0px 5px 0px #000;
-          box-shadow: 0px 0px 5px 0px #000;
+  -webkit-box-shadow: 0px 0px 5px 0px #004777;
+          box-shadow: 0px 0px 5px 0px #004777;
 }
 
 .all-posts__body__single-post:hover h4 {
-  color: #fa1606;
+  color: #206db3;
 }
 
 .all-posts__body__single-post__title {
