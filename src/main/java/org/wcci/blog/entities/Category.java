@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+
 @Entity
 public class Category {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY )
@@ -15,7 +17,7 @@ public class Category {
     private String categoryName;
     @ManyToMany(mappedBy = "postCategories")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Collection<Post> categoryPosts =new ArrayList<>();
+    private Collection<Post> categoryPosts =new HashSet<>();
 
     public Category() {
     }

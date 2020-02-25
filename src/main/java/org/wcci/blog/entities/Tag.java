@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
-
+import java.util.HashSet;
 
 
 @Entity
@@ -19,7 +19,7 @@ public class Tag {
     private String tagName;
     @ManyToMany(mappedBy = "postTags")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Collection<Post> tagPosts =new ArrayList<>();
+    private Collection<Post> tagPosts =new HashSet<>();
 
     public Tag() {
     }

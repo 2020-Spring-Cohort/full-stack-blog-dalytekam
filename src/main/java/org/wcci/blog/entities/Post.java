@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 
 
 @Entity
@@ -26,10 +27,10 @@ public class Post {
     private Author postAuthor;
     @ManyToMany
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Collection<Category> postCategories = new ArrayList<>();
+    private Collection<Category> postCategories = new HashSet<>();
     @ManyToMany
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Collection<Tag> postTags =new ArrayList<>();
+    private Collection<Tag> postTags =new HashSet<>();
 
     private LocalDateTime postDate = LocalDateTime.now();
 

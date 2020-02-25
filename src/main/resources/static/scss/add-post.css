@@ -327,10 +327,9 @@ form button:hover {
 }
 
 .add_post {
-  border-left: 0.1rem solid #004777;
-  border-right: 0.1rem solid #004777;
-  border-bottom: 0.1rem solid #004777;
+  border: 0.1rem solid #004777;
   padding: 2rem 4rem 2rem 4rem;
+  margin-top: 4rem;
   border-radius: 4px;
 }
 /*# sourceMappingURL=add-post.css.map */

@@ -105,6 +105,12 @@ public class Populator implements CommandLineRunner {
                 System.out.println(post.getPostDate().format(myDateFormat));
         });
 
+          tagRepository.findAll().forEach(t->{
+              System.out.println(t.getTagName()+" : "+t.getTagPosts().size());
+              t.getTagPosts().forEach(p->{
+                  System.out.println(p.getPostTitle());
+              });
+          });
 
     }
 

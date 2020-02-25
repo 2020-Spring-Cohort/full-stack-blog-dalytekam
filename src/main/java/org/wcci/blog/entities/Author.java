@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+
 @Entity
 public class Author {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +17,7 @@ public class Author {
     private String authorName;
     @OneToMany(mappedBy = "postAuthor")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Collection<Post> authorPosts = new ArrayList<>();
+    private Collection<Post> authorPosts = new HashSet<>();
 
 
 

@@ -337,9 +337,9 @@ form {
 }
 
 .add_post {
-  border-left: 0.1rem solid $headerColor;
-  border-right: 0.1rem solid $headerColor;
-  border-bottom: 0.1rem solid $headerColor;
+  border: 0.1rem solid $headerColor;
+
   padding: 2rem 4rem 2rem 4rem;
+  margin-top: 4rem;
   border-radius: 4px;
 }
