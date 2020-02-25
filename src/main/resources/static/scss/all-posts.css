@@ -5,10 +5,9 @@
 }
 
 .container {
-  background-image: url(../images/frankfurt.jpg);
+  background-color: #e8e8e8;
   background-size: cover;
   position: relative;
-  height: 100vh;
   z-index: 1;
   display: -ms-grid;
   display: grid;
@@ -21,6 +20,7 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
+  background-color: #004777;
 }
 
 .container .main {
@@ -33,6 +33,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 .container .footer {
@@ -48,7 +50,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: -5;
 }
 
@@ -64,6 +66,7 @@
   color: #d1d1d1;
   -webkit-box-shadow: 0px 0px 6px 0px white;
           box-shadow: 0px 0px 6px 0px white;
+  margin-bottom: 1rem;
 }
 
 .header__logo {
@@ -205,24 +208,9 @@
 }
 
 .footer p {
-  color: #d1d1d1;
+  color: #000;
   margin: 0 auto;
   font-size: 0.8rem;
-}
-
-.welcome h3,
-.welcome h5 {
-  color: #d1d1d1;
-}
-
-.welcome h3 {
-  text-transform: uppercase;
-  font-size: 6rem;
-}
-
-.welcome h5 {
-  text-transform: uppercase;
-  font-size: 3rem;
 }
 
 .all-posts {
@@ -230,18 +218,19 @@
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  color: #fff;
+  color: #000;
 }
 
 .all-posts__head {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[10];
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-areas: "new search search searchButton - - - - -";
+  -ms-grid-columns: (1fr)[11];
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-areas: "new search search search searchButton - - - - - -";
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
+  margin: 0rem 3rem;
 }
 
 .all-post__head__new {
@@ -250,16 +239,139 @@
   grid-area: new;
 }
 
+.all-post__head__new a {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: #206db3;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+}
+
 .all-post__head__search {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: search;
+}
+
+.all-post__head__search input {
+  color: #333;
+  font-size: 1rem;
+  margin: 0 auto 0 3rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  border: none;
+  width: 80%;
+  display: block;
+  height: 1.2rem;
 }
 
 .all-post__head__search-button {
   -ms-grid-row: 1;
-  -ms-grid-column: 4;
+  -ms-grid-column: 5;
   grid-area: searchButton;
+}
+
+.all-post__head__search-button a {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: #006900;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+}
+
+.all-posts__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin: 1rem 3rem;
+}
+
+hr {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+.all-posts__body__single-post {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.5rem;
+  border: 0.1rem solid #000;
+  margin-top: 0.5rem;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.all-posts__body__single-post:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px #000;
+          box-shadow: 0px 0px 5px 0px #000;
+}
+
+.all-posts__body__single-post:hover h4 {
+  color: #fa1606;
+}
+
+.all-posts__body__single-post__title {
+  padding: 0.5rem;
+}
+
+.all-posts__body__single-post__author-and-date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr 6fr;
+      grid-template-columns: 1fr 5fr 6fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.all-posts__body__single-post__author-and-date .all-posts__body__single-post__author-and-date__pic {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.1rem;
+}
+
+.all-posts__body__single-post__author-and-date .all-posts__body__single-post__author-and-date__author {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  padding: 0.5rem;
+  color: #000;
+  font-weight: bolder;
+}
+
+.all-posts__body__single-post__author-and-date .all-posts__body__single-post__author-and-date__author__date {
+  display: -ms-grid;
+  display: grid;
+  color: #000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: right;
+  padding: 0.5rem;
+  font-weight: bolder;
+}
+
+.all-posts__body__single-post__partial-body {
+  padding: 1rem;
+  text-align: left;
+}
+
+.all-posts__body__single-post__partial-body p a {
+  text-decoration: none;
+  color: #004777;
 }
 /*# sourceMappingURL=all-posts.css.map */

@@ -25,8 +25,8 @@ $categoriesColors: (color1: #4c65af,
   background-color: $bgColor;
   background-size: cover;
   position: relative;
-  height: 100vh;
-  z-index: 1;
+  //height: 100vh;
+  z-index: 11;
   display: grid;
   grid-template-areas:
     "header"
@@ -83,6 +83,8 @@ $categoriesColors: (color1: #4c65af,
 
   & a {
     font-size: 5rem;
+    text-decoration: none;
+    color: $textColor;
   }
 }
 

@@ -10,8 +10,7 @@
   background-color: #e8e8e8;
   background-size: cover;
   position: relative;
-  height: 100vh;
-  z-index: 1;
+  z-index: 11;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "header" "main" "footer";
@@ -81,6 +80,8 @@
 
 .header__logo a {
   font-size: 5rem;
+  text-decoration: none;
+  color: #d1d1d1;
 }
 
 .header__nav {
