@@ -46,7 +46,7 @@
         </header>
         <main class="main">
             <div class="add_post">
-                <form action="" methos="get">
+                <form action="" methos="post">
                     <div class="title-post">
                         <label class="label" for="post-title">Title</label>
                         <Span class="add-post__title__errors"></Span>
@@ -55,12 +55,18 @@
                     <div class="author-post">
                         <label class="label" for="post-author">Author</label>
                         <Span class="add-post__author__errors"></Span>
-                        <input type="text" name="post-author" id="post-author">
+
+                        <select id="post-author">
+                            <option value="5"></option>
+                            <option value="5">ddff</option>
+                            <option value="5">jhgh</option>
+                            <option value="5">dsc</option>
+                        </select>
                     </div>
                     <div class="body-post">
                         <label class="label" for="post-body">body</label>
                         <Span class="add-post__body__errors">ddd</Span>
-                        <textarea rows="10" cols="auto"></textarea>
+                        <textarea rows="7" cols="auto"></textarea>
                     </div>
                     <div class="categories-post">
                         <div>
@@ -81,24 +87,11 @@
                         <div>
                             <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <div>
                             <input type="checkbox" name="post-categories" id="post-categories"><label>category1</label>
                         </div>
                     </div>
+
                     <div class="tags-post">
                         <div>
                             <label class="label" for="post-tag">Tags</label>
