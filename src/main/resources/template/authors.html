@@ -3,17 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Categories</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/index.css">
+    <link rel="stylesheet" href="../static/scss/authors.css">
 </head>
 
 <body>
-    <div class="container">
+    <section class="container">
         <header class="header">
             <div class="header__logo">
-                <a>POC</a>
+                <a href="#">POC</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav__main">
@@ -45,16 +45,364 @@
 
         </header>
         <main class="main">
-            <!-- <section class="welcome">
-                <h3>welcome to <span>poc</span></h3>
-                <h5>Blogging has never been so sweet...</h5>
-            </section> -->
+            <section class="all-authors">
+                <div class="all-authors__head">
+                    <div class="all-authors__head__new">
+                        <a href="#">New Category</a>
+                    </div>
+                    <div class="all-authors__head__search">
+                        <input type="text" placeholder="Enter a Category name here">
+                    </div>
+                    <div class="all-authors__head__search-button">
+                        <a href="#">Search</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="all-authors__body">
+
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="all-authors__body__single-author">
+                        <div class="all-authors__body__single-author__authorName">
+                            <a href="#">Author name</a>
+                        </div>
+                        <div class="all-authors__body__single-author__edit">
+                            <a href="#"><i class="far fa-edit"></i></a>
+                        </div>
+                        <div class="all-authors__body__single-author__delete">
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </section>
+
+
         </main>
         <footer class="footer">
             <p>copiright &copy 2020 daly tekam </p>
             <p>All Rights reserved </p>
         </footer>
-    </div>
+        </div>
 </body>
 
 </html>

@@ -33,7 +33,7 @@ $categoriesColors: (color1: #4c65af,
     "header"
     "main"
     "footer";
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 0.7fr 5fr 1fr;
 
   .header {
     grid-area: header;
