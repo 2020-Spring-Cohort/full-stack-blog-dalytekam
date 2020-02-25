@@ -7,8 +7,10 @@ import org.wcci.blog.entities.Tag;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 
 @Entity
@@ -29,15 +31,15 @@ public class Post {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<Tag> postTags =new ArrayList<>();
 
-    public Post() {
-    }
+    private LocalDateTime postDate = LocalDateTime.now();
 
-    public Post(String postTitle, String postBody, Author postAuthor) {
+
+    public Post(String postTitle, String postBody, Author postAuthor, LocalDateTime postDate) {
 
         this.postTitle = postTitle;
         this.postBody = postBody;
         this.postAuthor = postAuthor;
-
+        this.postDate = postDate;
 
     }
 
@@ -63,5 +65,11 @@ public class Post {
 
     public Collection<Tag> getPostTags() {
         return postTags;
+    }
+
+    public LocalDateTime getPostDate() {
+        return postDate;
+    }
+    public Post() {
     }
 }

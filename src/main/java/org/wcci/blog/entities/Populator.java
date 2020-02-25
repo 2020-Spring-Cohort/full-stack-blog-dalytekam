@@ -8,6 +8,10 @@ import org.wcci.blog.dao.CategoryRepository;
 import org.wcci.blog.dao.PostRepository;
 import org.wcci.blog.dao.TagRepository;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 @Component
 public class Populator implements CommandLineRunner {
     private PostRepository postRepository;
@@ -59,9 +63,9 @@ public class Populator implements CommandLineRunner {
         authorRepository.save(kuate);
 
         // Create post
-        Post post1 = new Post("My first Post", "is simply dummy text of the printing and ", daly);
-        Post post2 = new Post("My first Post", "is simply dummy ext of the printing a", richy);
-        Post post3 = new Post("My first Post", "is simply dummy text of the printing and t", tekam);
+        Post post1 = new Post("My first Post", "is simply dummy text of the printing and ", daly, LocalDateTime.now());
+        Post post2 = new Post("My first Post", "is simply dummy ext of the printing a", richy,LocalDateTime.now());
+        Post post3 = new Post("My first Post", "is simply dummy text of the printing and t", tekam,LocalDateTime.now());
 
         //Add categories to post
         post1.getPostCategories().add(food);
@@ -84,6 +88,8 @@ public class Populator implements CommandLineRunner {
         postRepository.save(post2);
         postRepository.save(post3);
 
+        // Date time formatter
+        DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
         postRepository.findAll().forEach(post -> {
             System.out.println(post.getPostId());
@@ -96,6 +102,7 @@ public class Populator implements CommandLineRunner {
                 System.out.println(t.getTagName());
             });
 
+                System.out.println(post.getPostDate().format(myDateFormat));
         });
 
 
