@@ -13,21 +13,21 @@
     <div class="container">
         <header class="header">
             <div class="header__logo">
-                <a>POC</a>
+                <a th:href="@{/index}">POC</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav__main">
                     <li class="header__nav__main__el">
-                        <a href="#">Posts</a>
+                        <a th:href="@{/all-posts}">Posts</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Tags</a>
+                        <a th:href="@{/tags}">Tags</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Categories</a>
+                        <a th:href="@{/categories}">Categories</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Authors</a>
+                        <a th:href="@{/authors}">Authors</a>
                     </li>
                 </ul>
             </nav>

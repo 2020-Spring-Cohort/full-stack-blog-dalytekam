@@ -1,4 +1,4 @@
-package org.wcci.blog.entities;
+package org.wcci.blog.controller;
 
 
 import org.springframework.context.annotation.Bean;

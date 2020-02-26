@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
     <title>Categories</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/categories.css">
+    <link rel="stylesheet" href="../static/scss/css/categories.css" th:href="@{/scss/css/categories.css}" />
 </head>
 
 <body>
     <section class="container">
         <header class="header">
             <div class="header__logo">
-                <a href="#">POC</a>
+                <a th:href="@{/index}">POC</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav__main">
                     <li class="header__nav__main__el">
-                        <a href="#">Posts</a>
+                        <a th:href="@{/all-posts}">Posts</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Tags</a>
+                        <a th:href="@{/tags}">Tags</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Categories</a>
+                        <a th:href="@{/categories}">Categories</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Authors</a>
+                        <a th:href="@{/authors}">Authors</a>
                     </li>
                 </ul>
             </nav>
@@ -45,16 +45,16 @@
 
         </header>
         <main class="main">
-            <section class="all-categories">
+            <div class="all-categories">
                 <div class="all-categories__head">
                     <div class="all-categories__head__new">
-                        <a href="#">New Category</a>
+                        <a th:href="@{/add-category}">New Category</a>
                     </div>
                     <div class="all-categories__head__search">
                         <input type="text" placeholder="Enter a Category name here">
                     </div>
                     <div class="all-categories__head__search-button">
-                        <a href="#">Search</a>
+                        <a th:href="@{/}">Search</a>
                     </div>
                 </div>
                 <hr>
@@ -257,7 +257,7 @@
 
 
                 </div>
-            </section>
+            </div>
 
 
         </main>
@@ -265,7 +265,8 @@
             <p>copiright &copy 2020 daly tekam </p>
             <p>All Rights reserved </p>
         </footer>
-        </div>
+
+    </section>
 </body>
 
 </html>

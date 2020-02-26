@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
     <title>All Posts</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/all-posts.css">
+    <link rel="stylesheet" href="../static/scss/css/all-posts.css" th:href="@{/scss/css/all-posts.css}" />
 </head>
 
 <body>
     <div class="container">
         <header class="header">
             <div class="header__logo">
-                <a href="#">POC</a>
+                <a th:href="@{/index}">POC</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav__main">
                     <li class="header__nav__main__el">
-                        <a href="#">Posts</a>
+                        <a th:href="@{/all-posts}">Posts</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Tags</a>
+                        <a th:href="@{/tags}">Tags</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Categories</a>
+                        <a th:href="@{/categories}">Categories</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Authors</a>
+                        <a th:href="@{/authors}">Authors</a>
                     </li>
                 </ul>
             </nav>
@@ -48,13 +48,13 @@
             <section class="all-posts">
                 <div class="all-posts__head">
                     <div class="all-post__head__new">
-                        <a href="#">New Post</a>
+                        <a th:href="@{/add-post}">New Post</a>
                     </div>
                     <div class="all-post__head__search">
                         <input type="text" placeholder="Enter a Title here">
                     </div>
                     <div class="all-post__head__search-button">
-                        <a href="#">Search</a>
+                        <a th:href="@{/succes}">Search</a>
                     </div>
                 </div>
                 <hr>
@@ -75,7 +75,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -89,6 +90,7 @@
 
                     <!---->
 
+
                     <div class="all-posts__body__single-post">
                         <div class="all-posts__body__single-post__title">
                             <h4>Title of the Post</h4>
@@ -104,7 +106,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -131,7 +134,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -158,7 +162,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -185,7 +190,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -212,7 +218,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -239,7 +246,8 @@
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
-                                <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
                             </div>
                             <div class="all-posts__body__single-post__author-and-date__author">
                                 <p>By <span>Author</span></p>
@@ -251,16 +259,257 @@
 
                     </div>
 
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
 
+                    </div>
 
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
 
+                    </div>
 
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
 
+                    </div>
 
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
 
+                    </div>
 
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
 
+                    </div>
 
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="all-posts__body__single-post">
+                        <div class="all-posts__body__single-post__title">
+                            <h4>Title of the Post</h4>
+                        </div>
+                        <div class="all-posts__body__single-post__partial-body">
+                            <p><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                    exercitationem quo
+                                    qui
+                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
+                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
+                                    distinctio?
+                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                        </div>
+                        <div class="all-posts__body__single-post__author-and-date">
+                            <div class="all-posts__body__single-post__author-and-date__pic">
+                                <img src="../static/images/imageedit_5_4500663819.png"
+                                    th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author">
+                                <p>By <span>Author</span></p>
+                            </div>
+                            <div class="all-posts__body__single-post__author-and-date__author__date">
+                                <p>02/20/2020 09:48 am</p>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </section>

@@ -87,6 +87,8 @@ $categoriesColors: (color1: #4c65af,
 
   & a {
     font-size: 5rem;
+    text-decoration: none;
+    color: $textColor;
   }
 }
 

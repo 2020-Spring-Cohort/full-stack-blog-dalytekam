@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
     <title>Categories</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/authors.css">
+    <link rel="stylesheet" href="../static/scss/css/authors.css" th:href="@{/scss/css/authors.css}" />
 </head>
 
 <body>
     <section class="container">
         <header class="header">
             <div class="header__logo">
-                <a href="#">POC</a>
+                <a th:href="@{/index}">POC</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav__main">
                     <li class="header__nav__main__el">
-                        <a href="#">Posts</a>
+                        <a th:href="@{/all-posts}">Posts</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Tags</a>
+                        <a th:href="@{/tags}">Tags</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Categories</a>
+                        <a th:href="@{/categories}">Categories</a>
                     </li>
                     <li class="header__nav__main__el">
-                        <a href="#">Authors</a>
+                        <a th:href="@{/authors}">Authors</a>
                     </li>
                 </ul>
             </nav>
@@ -48,21 +48,21 @@
             <section class="all-authors">
                 <div class="all-authors__head">
                     <div class="all-authors__head__new">
-                        <a href="#">New Category</a>
+                        <a th:href="@{add-author}">New Category</a>
                     </div>
                     <div class="all-authors__head__search">
                         <input type="text" placeholder="Enter a Category name here">
                     </div>
                     <div class="all-authors__head__search-button">
-                        <a href="#">Search</a>
+                        <a th:href="@{/authors}">Search</a>
                     </div>
                 </div>
                 <hr>
-                <div class="all-authors__body">
+                <div th:each="author:${authors}" class="all-authors__body">
 
                     <div class="all-authors__body__single-author">
                         <div class="all-authors__body__single-author__authorName">
-                            <a href="#">Author name</a>
+                            <a href="#" th:text="${author.authorName}">Author name</a>
                         </div>
                         <div class="all-authors__body__single-author__edit">
                             <a href="#"><i class="far fa-edit"></i></a>
@@ -394,8 +394,8 @@
 
 
                 </div>
-            </section>
 
+            </section>
 
         </main>
         <footer class="footer">
@@ -403,6 +403,7 @@
             <p>All Rights reserved </p>
         </footer>
         </div>
+    </section>
 </body>
 
 </html>
