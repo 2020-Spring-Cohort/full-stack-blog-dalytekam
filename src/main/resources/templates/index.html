@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Home</title>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/index.css">
+    <link rel="stylesheet" href="../static/scss/css/index.css"
+    th:href="@{/scss/css/index.css}"/>
 </head>
 
 <body>
     <div class="container">
         <header class="header">
             <div class="header__logo">
-                <a>POC</a>
+                <a href="#">POC</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav__main">
@@ -45,13 +49,13 @@
 
         </header>
         <main class="main">
-            <!-- <section class="welcome">
+            <section class="welcome">
                 <h3>welcome to <span>poc</span></h3>
                 <h5>Blogging has never been so sweet...</h5>
-            </section> -->
+            </section>
         </main>
         <footer class="footer">
-            <p>copiright &copy 2020 daly tekam </p>
+            <p>copiright &copy 2020 </p>
             <p>All Rights reserved </p>
         </footer>
     </div>
