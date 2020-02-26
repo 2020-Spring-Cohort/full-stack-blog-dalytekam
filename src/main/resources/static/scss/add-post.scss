@@ -215,6 +215,13 @@ main {
 
 }
 
+.add_post h4 {
+  color: $headerColor;
+  font-variant: small-caps;
+  margin-bottom: 1rem;
+  font-size: 1.2rem
+}
+
 form {
   display: grid;
   grid-gap: 1rem;

@@ -242,17 +242,17 @@ $categoriesColors: (color1: #4c65af,
 
   & a:nth-child(1) {
     text-decoration: none;
-    color: $textColor2;
+    color: lighten($textColor2, 70%);
     display: inline-block;
     padding: 0.1rem 2rem;
     line-height: 1.6rem;
     font-size: 1rem;
     height: 1.6rem;
-    border: 0.1rem solid $backColor;
+
 
     &:hover {
-      background-color: $backColor;
-      color: $textColor3;
+      color: $backColor;
+
     }
   }
 
@@ -260,17 +260,17 @@ $categoriesColors: (color1: #4c65af,
     grid-column: 7 / span 1;
 
     text-decoration: none;
-    color: $textColor2;
+    color: lighten($textColor2, 70%);
     display: inline-block;
     padding: 0.1rem 2rem;
     line-height: 1.6rem;
     font-size: 1rem;
     height: 1.6rem;
-    border: 0.1rem solid $deleteColor;
+
 
     &:hover {
-      background-color: $deleteColor;
-      color: $textColor3;
+      color: $deleteColor;
+
     }
   }
 
@@ -278,17 +278,17 @@ $categoriesColors: (color1: #4c65af,
     grid-column: 6 / span 1;
 
     text-decoration: none;
-    color: $textColor2;
+    color: lighten($textColor2, 70%);
     display: inline-block;
     padding: 0.1rem 2rem;
     line-height: 1.6rem;
     font-size: 1rem;
     height: 1.6rem;
-    border: 0.1rem solid $editColor;
+
 
     &:hover {
-      background-color: $editColor;
-      color: $textColor3;
+      color: $editColor;
+
     }
   }
 }
@@ -342,6 +342,8 @@ $categoriesColors: (color1: #4c65af,
     padding: 0.2rem;
 
     & h4 {
+      border-radius: 5px;
+      margin-bottom: 1rem;
       border: 0.1rem solid $headerColor;
       background-color: $headerColor;
       width: 8rem;
@@ -381,6 +383,8 @@ $categoriesColors: (color1: #4c65af,
     padding: 0.2rem;
 
     & h4 {
+      margin-bottom: 1rem;
+      border-radius: 5px;
       border: 0.1rem solid $headerColor;
       background-color: $headerColor;
       width: 8rem;
@@ -414,6 +418,7 @@ $categoriesColors: (color1: #4c65af,
 
   & .single-post-container__auth-and-date__pic {
     display: grid;
+
 
     align-items: center;
     padding: 0.1rem;
