@@ -270,12 +270,11 @@
   grid-area: searchButton;
 }
 
-.add-author__form__search-button a {
+.add-author__form__search-button button {
   padding: 0.5rem 1rem;
-  font-size: 1.3rem;
+  font-size: 5rem;
   background-color: #006900;
   color: #fff;
-  text-decoration: none;
   display: inline-block;
   border-radius: 4px;
 }

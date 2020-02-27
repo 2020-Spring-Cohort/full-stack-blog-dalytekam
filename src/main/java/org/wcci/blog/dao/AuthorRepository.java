@@ -7,8 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.wcci.blog.entities.Author;
 
+import java.util.List;
+
 public interface AuthorRepository extends JpaRepository<Author,Long> {
 
-    @Query("select a from Author a where a.authorName like :x")
-    Page<Author> search(@Param("x") String kw, Pageable pageable);
+
+    List<Author> findByAuthorName(String authorName);
+
 }

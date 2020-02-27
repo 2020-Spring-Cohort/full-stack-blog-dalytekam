@@ -34,7 +34,7 @@ $categoriesColors: (color1: #4c65af,
         "header"
         "main"
         "footer";
-    grid-template-rows: 0.7fr 5fr 1fr;
+    grid-template-rows: 0.7fr auto 1fr;
 
     .header {
         grid-area: header;
@@ -279,6 +279,7 @@ $categoriesColors: (color1: #4c65af,
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
     margin: 1rem 3rem;
+    grid-auto-flow: column;
 }
 
 hr {

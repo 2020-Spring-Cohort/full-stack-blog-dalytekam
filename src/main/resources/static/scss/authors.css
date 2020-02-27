@@ -13,8 +13,8 @@
   display: -ms-grid;
   display: grid;
       grid-template-areas: "header" "main" "footer";
-  -ms-grid-rows: 0.7fr 5fr 1fr;
-      grid-template-rows: 0.7fr 5fr 1fr;
+  -ms-grid-rows: 0.7fr auto 1fr;
+      grid-template-rows: 0.7fr auto 1fr;
 }
 
 .container .header {
@@ -293,6 +293,7 @@
       grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   margin: 1rem 3rem;
+  grid-auto-flow: column;
 }
 
 hr {

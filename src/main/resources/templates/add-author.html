@@ -47,14 +47,14 @@
         <main class="main">
             <section class="add-author">
 
-                <form th:action="@{saveAuthor}" method="POST" class="add-author__form">
+                <form th:action="@{save-author}" method="POST" class="add-author__form">
 
 
                     <div class="add-author__form__search">
-                        <input type="text" placeholder="Enter a Author Name here" name="authorName">
+                        <input type="text" placeholder="Enter a Author Name here" name="authorName" />
                     </div>
                     <div class="add-author__form__search-button">
-                        <button><a th:href="@{saveAuthor}">Save</a></button>
+                        <button type="submit">Save</button> <!-- a tag to put back-->
                     </div>
 
                 </form>

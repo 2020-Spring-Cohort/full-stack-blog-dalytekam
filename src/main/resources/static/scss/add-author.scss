@@ -266,12 +266,13 @@ $categoriesColors: (color1: #4c65af,
 
     grid-area: searchButton;
 
-    & a {
+    & button {
         padding: 0.5rem 1rem;
-        font-size: 1.3rem;
+        font-size: 5rem;
+
         background-color: $editColor;
         color: $textColor3;
-        text-decoration: none;
+        //text-decoration: none;
         display: inline-block;
         border-radius: 4px;
     }
