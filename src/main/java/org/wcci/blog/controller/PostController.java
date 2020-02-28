@@ -52,29 +52,30 @@ public class PostController {
     }
 
    @PostMapping("/save-post")
-    public String savePost(@RequestParam String postTitle, @RequestParam String postBody, @RequestParam String authorId, @RequestParam List<String> categories, List<String> tags, Model model){
+   public String savePost(@RequestParam String postTitle, @RequestParam String postBody, @RequestParam String authorId, @RequestParam String[] categories, @RequestParam String[] tags, Model model) {
 
-      Long idofAuthor = Long.parseLong(authorId);
-        Author authorOfPost = blogServiceImpl.findAuthorById(idofAuthor);
-       Post postNewlyCreated = new Post(postTitle,postBody,authorOfPost, LocalDateTime.now());
+       Long idofAuthor = Long.parseLong(authorId);
+       Author authorOfPost = blogServiceImpl.findAuthorById(idofAuthor);
+       Post postNewlyCreated = new Post(postTitle, postBody, authorOfPost, LocalDateTime.now());
 
 
+       for (String categoryId : categories) {
+           Long idOfCategory = Long.parseLong(categoryId);
+           Category categoryToFind = blogServiceImpl.findCategoryById(idOfCategory);
+           blogServiceImpl.addCategoryToAPost(categoryToFind, postNewlyCreated);
+       }
 
-       categories.forEach(catName->{
-         //Long idOfCategory = Long.parseLong(catId);
-       List  <Category> categoryToFind= blogServiceImpl.findCategoryByName(catName);
-         blogServiceImpl.addCategoryToAPost(categoryToFind.get(0),postNewlyCreated);
-     });
-       tags.forEach(tagId->{
-         // Long idOfTag = Long.parseLong(tagId);
-           Tag tagToFind = blogServiceImpl.findTagById(tagId);
-           blogServiceImpl.addTagToAPost(tagToFind,postNewlyCreated);
-       });
-        blogServiceImpl.savePost(postNewlyCreated);
-        return "succes";
+           for (String tagId : tags) {
+               Long idOfTag = Long.parseLong(tagId);
+               Tag tagToFind = blogServiceImpl.findTagById(idOfTag);
+               blogServiceImpl.addTagToAPost(tagToFind, postNewlyCreated);
+           }
+           blogServiceImpl.savePost(postNewlyCreated);
+
+           return "succes";
+
+
+       }
    }
 
 
-
-
-}

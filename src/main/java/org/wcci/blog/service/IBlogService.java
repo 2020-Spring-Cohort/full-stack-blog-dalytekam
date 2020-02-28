@@ -6,7 +6,7 @@ import org.wcci.blog.entities.Post;
 import org.wcci.blog.entities.Tag;
 
 import java.util.List;
-import java.util.Set;
+
 
 public interface IBlogService {
     public List<Author> listOfAllAuthors();
@@ -23,7 +23,6 @@ public interface IBlogService {
     public void addTagToAPost(Tag tag,Post post);
     public void addCategoryToAPost(Category category, Post post);
 
-
     public Post findPostById(Long id);
     public Tag findTagById(Long id);
     public Author findAuthorById(Long id);
@@ -31,10 +30,5 @@ public interface IBlogService {
     public List<Author> findAuthorByName(String authName);
     public List<Category> findCategoryByName(String catName);
     public List<Tag> findTagByName(String tagName);
-
-
-
-
-
 
 }

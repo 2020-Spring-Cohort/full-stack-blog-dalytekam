@@ -72,7 +72,7 @@
                             <label class="label" for="post-categories">Categories</label>
                         </div>
                         <div th:each="category:${categories}">
-                            <input  type="checkbox" name="categories" id="post-categories" th:value="${category.categoryName}"/><label th:text="${category.categoryName}">category1</label>
+                            <input  type="checkbox" name="categories" id="post-categories" th:value="${category.categoryId}"/><label th:text="${category.categoryName}">category1</label>
                         </div>
 
 
@@ -83,7 +83,7 @@
                             <label class="label" for="post-tag">Tags</label>
                         </div>
                         <div th:each="tag:${tags}">
-                            <input  type="checkbox" name="tags" id="post-tag" th:value="${tag.tagName}"/>
+                            <input  type="checkbox" name="tags" id="post-tag" th:value="${tag.tagId}"/>
                             <label th:text="${tag.tagName}">Tag1</label>
                         </div>
 

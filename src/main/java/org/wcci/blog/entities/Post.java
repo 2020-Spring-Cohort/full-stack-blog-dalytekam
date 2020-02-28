@@ -19,9 +19,9 @@ import java.util.HashSet;
 public class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
-    @NotNull
+   // @NotNull
     private String postTitle;
-    @NotNull
+   // @NotNull
     @Column(columnDefinition="TEXT")
     private String postBody;
     @ManyToOne
