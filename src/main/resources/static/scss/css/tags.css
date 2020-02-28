@@ -13,8 +13,8 @@
   display: -ms-grid;
   display: grid;
       grid-template-areas: "header" "main" "footer";
-  -ms-grid-rows: 0.7fr 5fr 1fr;
-      grid-template-rows: 0.7fr 5fr 1fr;
+  -ms-grid-rows: 0.5fr auto 1fr;
+      grid-template-rows: 0.5fr auto 1fr;
 }
 
 .container .header {

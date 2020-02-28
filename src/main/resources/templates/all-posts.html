@@ -65,13 +65,10 @@
                             <h4 th:text="${post.postTitle}">Title of the Post</h4>
                         </div>
                         <div class="all-posts__body__single-post__partial-body">
-                            <p><a th:text="${post.postBody}" th:href="@{'/post/'+${post.postId}}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
-                                    exercitationem quo
-                                    qui
-                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae
-                                    consequuntur aspernatur nulla veritatis labore illo vero. Sequi facere ipsa
-                                    distinctio?
-                                    Atque fugit odio eaque ea sint tenetur?</a></p>
+                            <p><a  th:text="${post.postBody}" th:href="@{'/post/'+${post.postId}}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                                   </a>
+                            </p>
+
                         </div>
                         <div class="all-posts__body__single-post__author-and-date">
                             <div class="all-posts__body__single-post__author-and-date__pic">
@@ -97,7 +94,7 @@
             </section>
         </main>
         <footer class="footer">
-            <p>copiright &copy 2020 </p>
+            <p>Copyright &copy 2020 </p>
             <p>All Rights reserved </p>
         </footer>
     </div>

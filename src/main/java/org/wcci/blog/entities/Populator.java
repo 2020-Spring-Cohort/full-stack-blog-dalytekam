@@ -73,8 +73,14 @@ public class Populator implements CommandLineRunner {
                 "            alias. Quia mollitia doloribus impedit amet, sequi eos dolorum\n" +
                 "            architecto expedita fugiat illo maxime nesciunt rem neque est\n" +
                 "            velit alias voluptatem? Soluta officia neque a. ", daly, LocalDateTime.now());
-        Post post2 = new Post("My second Post", "is simply dummy ext of the printing a", richy,LocalDateTime.now());
-        Post post3 = new Post("My third Post", "is simply dummy text of the printing and t", tekam,LocalDateTime.now());
+        Post post2 = new Post("My second Post", "is simply dummy ext of the printing a exercitationem quo\n" +
+                "                                    qui\n" +
+                "                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae\n" +
+                "                                    consequuntur aspernatur nulla veritatis labore illo vero", richy,LocalDateTime.now());
+        Post post3 = new Post("My third Post", "is simply dummy text of the printing and t exercitationem quo\n" +
+                "                                    qui\n" +
+                "                                    quidem aperiam eos autem voluptates dolor eveniet! Quaerat perferendis beatae\n" +
+                "                                    consequuntur aspernatur nulla veritatis labore illo vero", tekam,LocalDateTime.now());
 
         //Add categories to post
         post1.getPostCategories().add(food);

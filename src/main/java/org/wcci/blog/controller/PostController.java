@@ -52,24 +52,24 @@ public class PostController {
     }
 
    @PostMapping("/save-post")
-   public String savePost(@RequestParam String postTitle, @RequestParam String postBody, @RequestParam String authorId, @RequestParam String[] categories, @RequestParam String[] tags, Model model) {
+   public String savePost(@RequestParam String postTitle, @RequestParam String postBody, @RequestParam String authorId, @RequestParam(defaultValue = "") String[] categories, @RequestParam(defaultValue = "") String[] tags, Model model) {
 
        Long idofAuthor = Long.parseLong(authorId);
        Author authorOfPost = blogServiceImpl.findAuthorById(idofAuthor);
        Post postNewlyCreated = new Post(postTitle, postBody, authorOfPost, LocalDateTime.now());
 
-
+           if(categories.length>0){
        for (String categoryId : categories) {
            Long idOfCategory = Long.parseLong(categoryId);
            Category categoryToFind = blogServiceImpl.findCategoryById(idOfCategory);
            blogServiceImpl.addCategoryToAPost(categoryToFind, postNewlyCreated);
-       }
-
+       }}
+       if(tags.length>0){
            for (String tagId : tags) {
                Long idOfTag = Long.parseLong(tagId);
                Tag tagToFind = blogServiceImpl.findTagById(idOfTag);
                blogServiceImpl.addTagToAPost(tagToFind, postNewlyCreated);
-           }
+           }}
            blogServiceImpl.savePost(postNewlyCreated);
 
            return "succes";
