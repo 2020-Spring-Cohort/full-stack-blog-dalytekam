@@ -80,6 +80,7 @@ public class BlogServiceImpl implements IBlogService {
 
     @Override
     public void saveCategory(String catName) {
+        // Check the case to implement
         List<Category> allCategories = categoryRepository.findByCategoryName(catName);
         if(allCategories.size() ==0){
      Category categoryToSave = new Category(catName);
@@ -87,13 +88,13 @@ public class BlogServiceImpl implements IBlogService {
     }
 
     @Override
-    public void addTagToAPost(Tag tag) {
-
+    public void addTagToAPost(Tag tag, Post post) {
+       post.getPostTags().add(tag);
     }
 
     @Override
-    public void addCategoryToAPost() {
-
+    public void addCategoryToAPost(Category category, Post post) {
+       post.getPostCategories().add(category);
     }
 
     @Override
@@ -126,6 +127,7 @@ public class BlogServiceImpl implements IBlogService {
     public List<Category> findCategoryByName(String catName) {
         return categoryRepository.findByCategoryName(catName);
     }
+
 
     @Override
     public List<Tag> findTagByName(String tagName) {

@@ -37,7 +37,8 @@ public class Tag {
         return tagId;
     }
 
-    public String getTagName() {
+    public String getTagName()
+    {
         return tagName;
     }
 

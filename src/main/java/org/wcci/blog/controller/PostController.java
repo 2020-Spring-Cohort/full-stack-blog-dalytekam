@@ -7,10 +7,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Category;
 import org.wcci.blog.entities.Post;
+import org.wcci.blog.entities.Tag;
 import org.wcci.blog.service.BlogServiceImpl;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Controller
@@ -40,18 +44,35 @@ public class PostController {
 
 // Add a new Post
     @GetMapping("/add-post")
-    public String addPost(){
+    public String addPost(Model model){
+        model.addAttribute("authors",blogServiceImpl.listOfAllAuthors());
+        model.addAttribute("categories", blogServiceImpl.listOfAllCategories());
+        model.addAttribute("tags", blogServiceImpl.listOfAllTags());
         return "add-post";
     }
 
-   // @PostMapping("/save-post")
-   // public String savePost(@RequestParam String postTitle, @RequestParam String postBody, @RequestParam String postAuthorName){
+   @PostMapping("/save-post")
+    public String savePost(@RequestParam String postTitle, @RequestParam String postBody, @RequestParam String authorId, @RequestParam List<String> categories, List<String> tags, Model model){
+
+      Long idofAuthor = Long.parseLong(authorId);
+        Author authorOfPost = blogServiceImpl.findAuthorById(idofAuthor);
+       Post postNewlyCreated = new Post(postTitle,postBody,authorOfPost, LocalDateTime.now());
 
 
-       // Post postNewlyCreated = new Post(postTitle,postBody,postAuthor, LocalDateTime.now());
-       // blogServiceImpl.saveAuthor(authorName);
-        //return "succes";
-   // }
+
+       categories.forEach(catName->{
+         //Long idOfCategory = Long.parseLong(catId);
+       List  <Category> categoryToFind= blogServiceImpl.findCategoryByName(catName);
+         blogServiceImpl.addCategoryToAPost(categoryToFind.get(0),postNewlyCreated);
+     });
+       tags.forEach(tagId->{
+         // Long idOfTag = Long.parseLong(tagId);
+           Tag tagToFind = blogServiceImpl.findTagById(tagId);
+           blogServiceImpl.addTagToAPost(tagToFind,postNewlyCreated);
+       });
+        blogServiceImpl.savePost(postNewlyCreated);
+        return "succes";
+   }
 
 
 

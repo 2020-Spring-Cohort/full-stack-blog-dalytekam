@@ -20,8 +20,8 @@ public interface IBlogService {
     public void saveCategory(String catName);
 
 
-    public void addTagToAPost(Tag tag);
-    public void addCategoryToAPost();
+    public void addTagToAPost(Tag tag,Post post);
+    public void addCategoryToAPost(Category category, Post post);
 
 
     public Post findPostById(Long id);
