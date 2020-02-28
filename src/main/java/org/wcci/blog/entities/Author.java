@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Objects;
 
 @Entity
 public class Author {
@@ -41,5 +42,19 @@ public class Author {
         return authorPosts;
     }
     public Author() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return authorId.equals(author.authorId) &&
+                authorName.equals(author.authorName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(authorId, authorName);
     }
 }

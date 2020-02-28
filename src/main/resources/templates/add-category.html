@@ -47,14 +47,14 @@
         <main class="main">
             <section class="add-category">
 
-                <form action="" method="post" class="add-category__form">
+                <form th:action="@{/save-category}" method="post" class="add-category__form">
 
 
                     <div class="add-category__form__search">
-                        <input type="text" placeholder="Enter a Category here">
+                        <input type="text" placeholder="Enter a Category here" name="categoryName">
                     </div>
                     <div class="add-category__form__search-button">
-                        <a href="#">Save</a>
+                        <button type="submit">Save</button>
                     </div>
 
                 </form>

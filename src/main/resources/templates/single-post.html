@@ -47,15 +47,15 @@
     <main class="main">
       <div class="single-post-container">
         <section class="single-post-container__edit">
-          <a href=""><i class="fas fa-arrow-circle-left"></i></a>
-          <a href=""><i class="far fa-edit"></i></a>
-          <a href=""><i class="fas fa-trash-alt"></i></a>
+          <a th:href="@{/all-posts}"><i class="fas fa-arrow-circle-left"></i></a>
+          <a th:disabled="true" href=""><i class="far fa-edit"></i></a>
+          <a th:disabled="true"  href=""><i class="fas fa-trash-alt"></i></a>
         </section>
         <section class="single-post-container__title">
-          <h4>Title of the blog</h4>
+          <h4 th:text="${singlePost.postTitle}">Title of the blog</h4>
         </section>
         <section class="single-post-container__body">
-          <p>
+          <p th:text="${singlePost.postBody}">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
             rerum sint nulla, dolor in aliquid sunt cumque tenetur ad autem
             beatae culpa velit odit nobis eius aut doloribus ex mollitia. Ab
@@ -77,10 +77,7 @@
             </div>
             <div class="single-post-container__cat-and-tag__cat__cats">
               <ul>
-                <li>category1</li>
-                <li>cat2</li>
-                <li>catego4</li>
-                <li>category9</li>
+                <li th:each="c:${singlePost.postCategories}" th:text="${c.categoryName}">category1</li>
               </ul>
             </div>
           </div>
@@ -90,23 +87,22 @@
             </div>
             <div class="single-post-container__cat-and-tag__tag__tags">
               <ul>
-                <li>tag1</li>
-                <li>tagandtag2</li>
-                <li>tag4</li>
-                <li>othertag9</li>
+                <li th:each="t:${singlePost.postTags}" th:text="${t.tagName}">tag1</li>
+
               </ul>
             </div>
           </div>
         </section>
         <section class="single-post-container__auth-and-date">
           <div class="single-post-container__auth-and-date__pic">
-            <img src="../static/images/imageedit_5_4500663819.png" alt="author picture" />
+            <img src="../static/images/imageedit_5_4500663819.png"
+                 th:src="@{/images/imageedit_5_4500663819.png}" alt="author picture" />
           </div>
           <div class="single-post-container__auth-and-date__auth">
-            <p>By <span>Author</span></p>
+            <p>By <span th:text="${singlePost.postAuthor.authorName}">Author</span></p>
           </div>
           <div class="single-post-container__auth-and-date__date">
-            <p>02/20/2020 09:48 am</p>
+            <p th:text="${singlePost.postDate}">02/20/2020 09:48 am</p>
           </div>
         </section>
       </div>

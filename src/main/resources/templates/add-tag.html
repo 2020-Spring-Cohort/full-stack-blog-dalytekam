@@ -47,14 +47,14 @@
         <main class="main">
             <section class="add-tag">
 
-                <form action="" method="post" class="add-tag__form">
+                <form th:action="@{/save-tag}" method="post" class="add-tag__form">
 
 
                     <div class="add-tag__form__search">
-                        <input type="text" placeholder="Enter a Tag Name here">
+                        <input type="text" placeholder="Enter a Tag Name here" name="tagName">
                     </div>
                     <div class="add-tag__form__search-button">
-                        <a th:href="@{/}">Save</a>
+                        <button type = "submit">Save</button>
                     </div>
 
                 </form>

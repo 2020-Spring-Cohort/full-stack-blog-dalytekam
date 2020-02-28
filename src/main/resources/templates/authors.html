@@ -60,15 +60,15 @@
                 <hr>
                 <div  class="all-authors__body">
 
-                    <div th:each="author:${ListOfAuthors}" class="all-authors__body__single-author">
+                    <div th:each="author:${authors}" class="all-authors__body__single-author">
                         <div class="all-authors__body__single-author__authorName">
-                            <a href="#" th:text="${author.authorName}">Author name</a>
+                            <a href="" th:text="${author.authorName}">Author name</a>
                         </div>
                         <div class="all-authors__body__single-author__edit">
-                            <a href="#"><i class="far fa-edit"></i></a>
+                            <a href=""><i class="far fa-edit"></i></a>
                         </div>
                         <div class="all-authors__body__single-author__delete">
-                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                            <a href=""><i class="fas fa-trash-alt"></i></a>
                         </div>
                     </div>
 

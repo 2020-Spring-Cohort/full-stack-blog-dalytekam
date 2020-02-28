@@ -10,6 +10,7 @@ import org.wcci.blog.entities.Category;
 import org.wcci.blog.entities.Post;
 import org.wcci.blog.entities.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,7 +42,8 @@ public class BlogServiceImpl implements IBlogService {
 
     @Override
     public List<Post> listOfAllPosts() {
-        List<Post> allPosts = postRepository.findAll();
+        List<Post> allPosts = new ArrayList<>();
+        allPosts=postRepository.findAll();
         return allPosts;
     }
 
@@ -53,14 +55,21 @@ public class BlogServiceImpl implements IBlogService {
 
     @Override
     public void saveAuthor(String authName) {
-     Author authorToSave= new Author(authName);
-     authorRepository.save(authorToSave);
+     List<Author> allAuthors = authorRepository.findByAuthorName(authName);
+     if(allAuthors.size() ==0){
+         Author authorToSave= new Author(authName);
+     authorRepository.save(authorToSave);}
+
+
+
     }
 
     @Override
     public void saveTag(String tagName) {
+        List<Tag> allTags = tagRepository.findByTagName(tagName);
+        if(allTags.size() ==0){
         Tag tagToSave= new Tag(tagName);
-        tagRepository.save(tagToSave);
+        tagRepository.save(tagToSave);}
     }
 
     @Override
@@ -71,8 +80,10 @@ public class BlogServiceImpl implements IBlogService {
 
     @Override
     public void saveCategory(String catName) {
+        List<Category> allCategories = categoryRepository.findByCategoryName(catName);
+        if(allCategories.size() ==0){
      Category categoryToSave = new Category(catName);
-     categoryRepository.save(categoryToSave);
+     categoryRepository.save(categoryToSave);}
     }
 
     @Override

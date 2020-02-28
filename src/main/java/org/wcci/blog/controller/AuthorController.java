@@ -10,28 +10,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.wcci.blog.dao.AuthorRepository;
 import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Tag;
+import org.wcci.blog.service.BlogServiceImpl;
+
+import java.util.List;
 
 @Controller
 public class AuthorController {
 
-private AuthorRepository authorRepository;
+    private BlogServiceImpl blogServiceImpl;
+
+    public AuthorController(BlogServiceImpl blogServiceImpl) {
+        this.blogServiceImpl = blogServiceImpl;
+    }
 
 
+    @GetMapping("/authors")
+    public String getAuthors(Model model) {
+        List<Author> authors = blogServiceImpl.listOfAllAuthors();
+        model.addAttribute("authors", authors);
+        return "authors";
 
-    public AuthorController(AuthorRepository authorRepository) {
-
-        this.authorRepository = authorRepository;
     }
 
 
 
 
+   // @GetMapping("/authors")
 
-
-
-    @GetMapping("/authors")
-
-    public String getAuthors(Model model)
+   // public String getAuthors(Model model)
             //Model model,
 //            @RequestParam(defaultValue = "0") int page,
 //            @RequestParam(defaultValue = "5")int size,
@@ -44,10 +51,10 @@ private AuthorRepository authorRepository;
 //        model.addAttribute("size", size);
 //        model.addAttribute("currentPage",page);
 //        model.addAttribute("keyword",keyword);
-    {
-        model.addAttribute("ListOfAuthors",authorRepository.findAll());
-        return "authors";
-    }
+  //  {
+      //  model.addAttribute("ListOfAuthors",authorRepository.findAll());
+      //  return "authors";
+   // }
 
 
     @GetMapping("/add-author")
@@ -58,10 +65,7 @@ private AuthorRepository authorRepository;
 
     @PostMapping("/save-author")
     public String saveAuthor(@RequestParam String authorName){
-        Author authorAdded = new Author(authorName);
-        authorRepository.save(authorAdded);
-
-
+        blogServiceImpl.saveAuthor(authorName);
         return "succes";
     }
 

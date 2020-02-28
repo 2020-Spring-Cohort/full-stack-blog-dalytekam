@@ -8,6 +8,7 @@ import org.wcci.blog.entities.Tag;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -69,6 +70,7 @@ public class Post {
     }
 
     public LocalDateTime getPostDate() {
+
         return postDate;
     }
     public Post() {

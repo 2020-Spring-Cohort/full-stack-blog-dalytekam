@@ -63,9 +63,18 @@ public class Populator implements CommandLineRunner {
         authorRepository.save(kuate);
 
         // Create post
-        Post post1 = new Post("My first Post", "is simply dummy text of the printing and ", daly, LocalDateTime.now());
-        Post post2 = new Post("My first Post", "is simply dummy ext of the printing a", richy,LocalDateTime.now());
-        Post post3 = new Post("My first Post", "is simply dummy text of the printing and t", tekam,LocalDateTime.now());
+        Post post1 = new Post("My first Post", "is simply dummy text of the printing and  beatae culpa velit odit nobis eius aut doloribus ex mollitia. Ab\n" +
+                "            non accusantium aliquam id eum labore, ipsum deleniti quas? Lorem\n" +
+                "            ipsum, dolor sit amet consectetur adipisicing elit. Sequi, Lorem\n" +
+                "            ipsum dolor sit, amet consectetur adipisicing elit. Labore tempore\n" +
+                "            iure minima earum aperiam reprehenderit libero nobis iste itaque\n" +
+                "            sed consectetur aspernatur deserunt a aliquam fugiat, magnam\n" +
+                "            dignissimos distinctio nisi nesciunt. Sit ducimus quas omnis\n" +
+                "            alias. Quia mollitia doloribus impedit amet, sequi eos dolorum\n" +
+                "            architecto expedita fugiat illo maxime nesciunt rem neque est\n" +
+                "            velit alias voluptatem? Soluta officia neque a. ", daly, LocalDateTime.now());
+        Post post2 = new Post("My second Post", "is simply dummy ext of the printing a", richy,LocalDateTime.now());
+        Post post3 = new Post("My third Post", "is simply dummy text of the printing and t", tekam,LocalDateTime.now());
 
         //Add categories to post
         post1.getPostCategories().add(food);
