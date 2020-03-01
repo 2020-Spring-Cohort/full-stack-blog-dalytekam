@@ -63,7 +63,7 @@
 
                     <div th:each="t:${tags}" class="all-tags__body__single-tag">
                         <div class="all-tags__body__single-tag__tagName">
-                            <a th:text="${t.tagName}" th:href="@{/}">Tag name</a>
+                            <a th:text="${t.tagName}" th:href="@{'/tag/'+${t.tagId}}">Tag name</a>
                         </div>
                         <div class="all-tags__body__single-tag__edit">
                             <a href=""><i class="far fa-edit"></i></a>

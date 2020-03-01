@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>All Posts</title>
+    <title th:text="${singleAuthor.authorName}">All Posts</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/scss/css/all-posts.css" th:href="@{/scss/css/all-posts.css}" />
+    <link rel="stylesheet" href="../static/scss/css/authorPostCollection.css"
+        th:href="@{/scss/css/authorPostCollection.css}" />
 </head>
 
 <body>
@@ -60,13 +61,14 @@
                 <hr>
                 <div class="all-posts__body">
 
-                    <div  th:each="post:${posts}" class="all-posts__body__single-post">
+                    <div th:each="post:${singleAuthor.authorPosts}" class="all-posts__body__single-post">
                         <div class="all-posts__body__single-post__title">
                             <h4 th:text="${post.postTitle}">Title of the Post</h4>
                         </div>
                         <div class="all-posts__body__single-post__partial-body">
-                            <p><a  th:text="${post.postBody.length() > 300} ? ${post.postBody.substring(0,300)+'...'} :${post.postBody}" th:href="@{'/post/'+${post.postId}}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
-                                   </a>
+                            <p><a th:text="${post.postBody}" th:href="@{'/post/'+${post.postId}}">Lorem ipsum dolor sit,
+                                    amet consectetur adipisicing elit. Atque
+                                </a>
                             </p>
 
                         </div>

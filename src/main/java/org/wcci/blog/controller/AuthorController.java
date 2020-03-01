@@ -36,25 +36,6 @@ public class AuthorController {
 
 
 
-   // @GetMapping("/authors")
-
-   // public String getAuthors(Model model)
-            //Model model,
-//            @RequestParam(defaultValue = "0") int page,
-//            @RequestParam(defaultValue = "5")int size,
-//            @RequestParam(name ="keyword",defaultValue = "")String keyword
-//    ){
-//        Page<Author> authorsPage = authorRepository.search("%"+keyword+"%",PageRequest.of(page, size));
-//        int[] pagesCount = new int[authorsPage.getTotalPages()];
-//        model.addAttribute("authors",authorsPage.getContent());
-//        model.addAttribute("pages",pagesCount);
-//        model.addAttribute("size", size);
-//        model.addAttribute("currentPage",page);
-//        model.addAttribute("keyword",keyword);
-  //  {
-      //  model.addAttribute("ListOfAuthors",authorRepository.findAll());
-      //  return "authors";
-   // }
 
 
     @GetMapping("/add-author")
@@ -69,6 +50,12 @@ public class AuthorController {
         return "succes";
     }
 
+    @GetMapping("/author/{id}")
+    public String getSingleTag(@PathVariable Long id, Model model){
+        Author retrievedAuthor = blogServiceImpl.findAuthorById(id);
+        model.addAttribute("singleAuthor",retrievedAuthor);
 
+        return "authorPostCollection";
+    }
 
 }

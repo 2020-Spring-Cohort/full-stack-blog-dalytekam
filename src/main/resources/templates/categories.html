@@ -62,7 +62,7 @@
 
                     <div th:each= "category:${categories}" class="all-categories__body__single-category">
                         <div class="all-categories__body__single-category__categoryName">
-                            <a href="" th:text="${category.categoryName}">Category name</a>
+                            <a href="" th:text="${category.categoryName}" th:href="@{'/category/'+ ${category.categoryId}}">Category name</a>
                         </div>
                         <div class="all-categories__body__single-category__edit">
                             <a href=""><i class="far fa-edit"></i></a>

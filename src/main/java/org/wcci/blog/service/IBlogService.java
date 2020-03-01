@@ -9,6 +9,8 @@ import java.util.List;
 
 
 public interface IBlogService {
+
+
     public List<Author> listOfAllAuthors();
     public List<Tag> listOfAllTags();
     public List<Post> listOfAllPosts();

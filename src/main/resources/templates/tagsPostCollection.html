@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>All Posts</title>
+    <title th:text="${singleTag.tagName}"></title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665726c0a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/scss/css/all-posts.css" th:href="@{/scss/css/all-posts.css}" />
@@ -56,16 +56,19 @@
                     <div class="all-post__head__search-button">
                         <a th:href="@{/succes}">Search</a>
                     </div>
+                    <div >
+                        <a th:text="${'#'+singleTag.tagName}">Search</a>
+                    </div>
                 </div>
                 <hr>
                 <div class="all-posts__body">
 
-                    <div  th:each="post:${posts}" class="all-posts__body__single-post">
+                    <div  th:each="post:${singleTag.tagPosts}" class="all-posts__body__single-post">
                         <div class="all-posts__body__single-post__title">
                             <h4 th:text="${post.postTitle}">Title of the Post</h4>
                         </div>
                         <div class="all-posts__body__single-post__partial-body">
-                            <p><a  th:text="${post.postBody.length() > 300} ? ${post.postBody.substring(0,300)+'...'} :${post.postBody}" th:href="@{'/post/'+${post.postId}}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+                            <p><a  th:text="${post.postBody}" th:href="@{'/post/'+${post.postId}}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
                                    </a>
                             </p>
 

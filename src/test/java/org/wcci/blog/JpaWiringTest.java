@@ -9,12 +9,16 @@ import org.wcci.blog.dao.CategoryRepository;
 import org.wcci.blog.dao.PostRepository;
 import org.wcci.blog.dao.TagRepository;
 import org.wcci.blog.entities.Author;
+import org.wcci.blog.entities.Category;
+import org.wcci.blog.entities.Post;
+import org.wcci.blog.entities.Tag;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class JpaWiringTest {
+
 
     @DataJpaTest
     public class JpaWiringTest {
@@ -28,86 +32,86 @@ public class JpaWiringTest {
         private TagRepository tagRepository;
         @Autowired
         private TestEntityManager entityManager;
+
+
         @Test
+        public void postShouldHaveAuthor() {
+            Author testAuthor1 = new Author("testAuthor1");
+            Post testPost1 = new Post("testTitle1", "testBody1", testAuthor1, LocalDateTime.now());
+            authorRepository.save(testAuthor1);
+            postRepository.save(testPost1);
+            entityManager.flush();
+            entityManager.clear();
+
+            Post retrievedPost = postRepository.findById(testPost1.getPostId()).get();
+            assertThat(retrievedPost.getPostAuthor().getAuthorName().contains("testAuthor1"));
+
+        }
+          @Test
+        public void postShouldBeAbleToHaveZeroOrMultipleTags(){
+              Author testAuthor2 = new Author("testAuthor2");
+              Post testPost2 = new Post("testTitle2", "testBody2", testAuthor2, LocalDateTime.now());
+              Post testPost3 = new Post("testTitle3", "testBody3", testAuthor2, LocalDateTime.now());
+
+              Tag testTag1 = new Tag("testTag1");
+              Tag testTag2 = new Tag("testTag2");
+              Tag testTag3 = new Tag("testTag3");
+
+              testPost2.getPostTags().add(testTag1);
+              testPost2.getPostTags().add(testTag2);
+              tagRepository.save(testTag1);
+              tagRepository.save(testTag2);
+              tagRepository.save(testTag3);
+              postRepository.save(testPost2);
+              authorRepository.save(testAuthor2);
+              postRepository.save(testPost3);
+
+              entityManager.flush();
+              entityManager.clear();
+              Post retrievedPost2 = postRepository.findById(testPost2.getPostId()).get();
+              assertThat(retrievedPost2.getPostTags().contains(testTag1));
+              assertThat(retrievedPost2.getPostTags().contains(testTag2));
+              assertThat(retrievedPost2.getPostTags()).doesNotContain(testTag3);
 
 
-        public void () {
-            Campus testCampus = new Campus("Testville");
-            Author testAuthor1 = new Author("Testy", "McTesterson");
+              Post retrievedPost3=postRepository.findById(testPost3.getPostId()).get();
+              assertThat(retrievedPost3.getPostTags()).isEmpty();
+          }
 
-            Book testBook = new Book("Title", "Test Description", testCampus, testAuthor1);
-            authorRepo.save(testAuthor1);
-            campusRepo.save(testCampus);
-            bookRepo.save(testBook);
+        @Test
+        public void postShouldBeAbleToHaveZeroOrMultipleCategories() {
+            Category testCategory1 = new Category("testCategory1");
+            Category testCategory2 = new Category("testCategory2");
+            categoryRepository.save(testCategory1);
+            categoryRepository.save(testCategory2);
+
+            Author testAuthor4 = new Author("testAuthor4");;
+            Post testPost4 = new Post("testTitle4", "testBody4", testAuthor4, LocalDateTime.now());
+            authorRepository.save(testAuthor4);
+            testPost4.getPostCategories().add(testCategory1);
+            testPost4.getPostCategories().add(testCategory2);
+
+            postRepository.save(testPost4);
 
             entityManager.flush();
             entityManager.clear();
 
-            Optional<Campus> retrievedCampusOptional = campusRepo.findById(testCampus.getId());
-            Campus retrievedCampus = retrievedCampusOptional.get();
-            Book retrievedBook = bookRepo.findById(testBook.getId()).get();
+            Post retrievedPost4 = postRepository.findById(testPost4.getPostId()).get();
+            assertThat(retrievedPost4.getPostCategories().contains(testCategory1));
+            assertThat(retrievedPost4.getPostCategories().contains(testCategory2));
 
-            assertThat(retrievedCampus.getBooks()).contains(testBook);
+
+            // Category should have a post
+
+            Category retrievedCategory =categoryRepository.findById(testCategory1.getCategoryId()).get();
+            assertThat(retrievedCategory.getCategoryPosts().contains(testPost4));
 
         }
 
-        @Test
-        public void booksShouldBeAbleToHaveMultipleAuthors() {
-            Author testAuthor1 = new Author("Testy", "McTesterson");
-            Author testAuthor2 = new Author("Bobby", "Testerson");
-            Campus testCampus = new Campus("Test Town");
-            Book testBook1 = new Book("Title1", "Test Description", testCampus, testAuthor1, testAuthor2);
-            Book testBook2 = new Book("Title2", "Test Description", testCampus, testAuthor2);
-            Book testBook3 = new Book("Title3", "Test Description", testCampus, testAuthor1);
-            authorRepo.save(testAuthor1);
-            authorRepo.save(testAuthor2);
-            campusRepo.save(testCampus);
-            bookRepo.save(testBook1);
-            bookRepo.save(testBook2);
-            bookRepo.save(testBook3);
 
-            entityManager.flush();
-            entityManager.clear();
-
-            Book retrievedBook = bookRepo.findById(testBook1.getId()).get();
-            Author retrievedAuthor1 = authorRepo.findById(testAuthor1.getId()).get();
-            Author retrievedAuthor2 = authorRepo.findById(testAuthor2.getId()).get();
-            assertThat(retrievedBook.getAuthors()).contains(testAuthor1, testAuthor2);
-            assertThat(retrievedAuthor1.getBooks()).contains(testBook1, testBook3);
-            assertThat(retrievedAuthor2.getBooks()).contains(testBook1, testBook2);
-        }
-
-        @Test
-        public void booksShouldHaveHashTags(){
-            Author testAuthor1 = authorRepo.save(new Author("Testy", "McTesterson"));
-            Campus testCampus = campusRepo.save(new Campus("Test Town"));
-            Book testBook1 = bookRepo.save(new Book("Title1", "Test Description", testCampus, testAuthor1));
-            Book testBook2 = bookRepo.save(new Book("Another Title", "Another Description", testCampus, testAuthor1));
-            Book testBook3 = bookRepo.save(new Book("Yet Another Book", "Yet another description", testCampus, testAuthor1));
-            HashTag testHashTag1 = hashTagRepo.save(new HashTag("Dude"));
-            HashTag testHashTag2 = hashTagRepo.save(new HashTag("Sweet"));
-            HashTag testHashTag3 = hashTagRepo.save(new HashTag("#Dude"));
-            testBook1.addHashTag(testHashTag1);
-            testBook1.addHashTag(testHashTag2);
-            bookRepo.save(testBook1);
-            testBook2.addHashTag(testHashTag3);
-            testBook2.addHashTag(testHashTag1);
-            bookRepo.save(testBook2);
-
-            entityManager.flush();
-            entityManager.clear();
-
-            Book retreivedBook1 = bookRepo.findById(testBook1.getId()).get();
-            Book retreivedBook2 = bookRepo.findById(testBook2.getId()).get();
-
-            assertThat(retreivedBook1.getHashTags()).contains(testHashTag1, testHashTag2);
-            assertThat(retreivedBook2.getHashTags()).contains(testHashTag1, testHashTag3);
-        }
-    }
+   }
 
 
 
 
 
-
-}
