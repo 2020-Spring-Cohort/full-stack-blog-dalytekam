@@ -51,7 +51,7 @@ public class AuthorController {
     }
 
     @GetMapping("/author/{id}")
-    public String getSingleTag(@PathVariable Long id, Model model){
+    public String getSingleAuthor(@PathVariable Long id, Model model){
         Author retrievedAuthor = blogServiceImpl.findAuthorById(id);
         model.addAttribute("singleAuthor",retrievedAuthor);
 

@@ -74,7 +74,6 @@ public class BlogServiceImpl implements IBlogService {
 
     @Override
     public void savePost(Post post) {
-      
         postRepository.save(post);
     }
 
